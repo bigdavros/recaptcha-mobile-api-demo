@@ -1,11 +1,12 @@
 # recaptcha-mobile-api-demo
-This demo will provision a project with the following resources:
- - App Engine
- - reCAPTCHA Enterprise Mobile keys
+This demo will provision a project with a Cloud Run API to respond to calls from a mobile application.
 
-## Required setup steps
-1) Have an exisiting project in Google Cloud, or create a new project with:
-`gcloud projects create $PROJECT_ID`
-2) Create an service account with the permissions contained in permissions.json
+## Requirements
+1) Domain name
+2) Google Cloud project
 3) Contact reCAPTCHA Enterprise sales to enable Mobile reCAPTCHA Enterprise site keys
-4) Use service account to run the setup.sh script
+
+## Setup steps
+1) Have an administrator create a service account with the permissions contained in permissions.json
+2) Get credentials for the service account
+3) Use service account to run the setup.sh script
