@@ -1,0 +1,35 @@
+
+        .highlight{
+            color: green;
+            font-weight:bold;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: stretch;
+        }
+
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+        }
+
+        #sidebar.active {
+            margin-left: -250px;
+        }
+
+
+        #spacer {
+            min-width: 25px;
+            max-width: 25px;
+        }
+
+        #content {
+            min-width: 300px;
+            max-width: 900px;
+        }
+
+        #I_O {
+            min-width: 850px;
+            max-width: 850px;
+        }
