@@ -1,6 +1,5 @@
 .vscode
 prepend.sh
-config.json
 target/*
 
 !target/demo-1.0-SNAPSHOT.war
