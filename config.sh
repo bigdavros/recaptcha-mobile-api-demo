@@ -14,6 +14,9 @@ else
     echo "export APPXAPIKEYWEB=\"$WEBRAND\"" >> /newcatalina.sh
     echo "export APPXAPIKEYANDROID=\"$ANDROIDRAND\"" >> /newcatalina.sh
     echo "export APPXAPIKEYIOS=\"$IOSRAND\"" >> /newcatalina.sh
+    echo APPXAPIKEYWEB - $WEBRAND
+    echo APPXAPIKEYANDROID - $ANDROIDKEY
+    echo APPXAPIKEYIOS - $IOSKEY
 fi
 
 cat config.json | jq '."project-info" ."project-number"' | awk '{print "export PROJECTID="$0}'>> newcatalina.sh
