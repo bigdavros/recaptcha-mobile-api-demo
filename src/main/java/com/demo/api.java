@@ -185,7 +185,7 @@ public class api extends HttpServlet {
     } 
 
     private void error(PrintWriter out,String msg){
-        out.print("{\n  \"data\":\""+msg+"\",\n  \"result\":\"error\"\n}");
+        out.print("{\n  \"data\":\"error\",\n  \"result\":\""+msg+"\"\n}");
     }
 
     @Override
@@ -215,7 +215,7 @@ public class api extends HttpServlet {
                     jb.append(line);
                 } 
                 catch (Exception e) { 
-                    error(out,"Error buffering JSON request string: "+e);
+                    error(out,"Error buffering JSON request string");
                 }
 
                 try {            
@@ -261,7 +261,7 @@ public class api extends HttpServlet {
                                         requestData.setToken(recapToken);
                                     }
                                     catch(Exception e){
-                                        error(out,"Error creating Request to reCAPTCHA: "+e);
+                                        error(out,"Error creating Request to reCAPTCHA");
                                     }                            
                                     try{
                                         // send Event object to recaptcha
@@ -270,7 +270,7 @@ public class api extends HttpServlet {
                                         out.print(recaptchaResponse.asJSON());
                                     }
                                     catch(Exception e){
-                                        error(out,"Error creating Reply object: "+e);
+                                        error(out,"Error creating Reply object");
                                     }
                                 }                        
                             }
@@ -283,11 +283,11 @@ public class api extends HttpServlet {
                         }
                     }
                     catch(Exception e){
-                        error(out,"Error parsing JSON string: "+e);
+                        error(out,"Error parsing POST JSON");
                     }            
                 } catch (Exception e) {
                     // crash and burn, jb is the orginal POST body from the jequest
-                    error(out,"Error creating JSON object from request input JSON: \n"+jb.toString()+"\n\n"+e);
+                    error(out,"No request body");
                 }
             }
             else{
