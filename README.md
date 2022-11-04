@@ -1,6 +1,6 @@
 # recaptcha-mobile-api-demo
 This demo will provision a Docker container to respond to requests from a mobile app. It runs as an API using the following spec:
-(api.md) API Spec
+* [API Spec](api.md) 
 
 ## Setup
 `config.json` is the file that holds the variables.
