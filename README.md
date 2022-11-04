@@ -50,6 +50,8 @@ Create a web, Android App, and iOS App site key and record the values here.
     }
 ```
 
+When setting the web site key, include either `localhost` as a domain or a domain where the container is either hosted, or your local Hosts file controls. Alternatively disable domain verification for this key. It is not recommended to use the site keys made in this demo after finishing the lab.
+
 ### Project Info
 The reCAPTCHA Enterprise call from the Docker container to Google Cloud needs to know details about your project, enter the project-number and project name.
 
@@ -81,3 +83,7 @@ sudo docker build -t rcemobapi . && sudo docker run -p 8080:8080 rcemobapi:lates
 ```
 
 Navigate to http://localhost:8080 to verify the installation.
+
+## Clean Up
+
+Once you have finished with the lab, remember to delete the site keys you made. This prevents the machine learning running reCAPTCHA Enterprise from giving you strange results after being run in a strange demo environment at the start of it's lifecycle.
