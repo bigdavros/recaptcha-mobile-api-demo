@@ -2,8 +2,10 @@
 This demo will provision a Docker container to respond to requests from a mobile app. It runs as an API using the following spec:
 * [API Spec](api.md) 
 
+The API runs an Apache Tomcat server and loads variables from the config.json file into the Java Environment for use in the application.
+
 ## Setup
-`config.json` is the file that holds the variables.
+`config.json` is the file that holds the variables that must be customised for the demo to function.
 
 ### API Keys
 The `api-keys` section is where the X-API-KEY header values that are used between the client and this docker container are stored.
