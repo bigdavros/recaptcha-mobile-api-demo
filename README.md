@@ -26,6 +26,19 @@ These are the site keys from reCAPTCHA Enterprise. You will need these from the 
 If the key types shown below are not available and greyed out then please contact your Google Cloud Sales representitive:
 <img src="/res/disabled-drop-down.png" width="200">
 
+### Project Info
+The reCAPTCHA Enterprise call from the Docker container to Google Cloud needs to know details about your project, enter the project-number and project name.
+```json
+"project-info":{
+        "description":"Variables for the Project",
+        "project-number":"",
+        "project-id":""
+    }
+```
+
+### Services and APIs
+This is the API credentials needed by the Docker container to access the reCAPTCHA Enterprise sevice on Google Cloud. You must create a new credential in `APIs and Services`, and then limit the scope to reCAPTCHA Enterprise.
+<img src="/res/api-credential-settings.png" width="400">
 
 Start container with command:
 ```
