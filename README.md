@@ -27,6 +27,7 @@ If you want the Docker container to create API keys for you, switch off `use-cus
 These are the site keys from reCAPTCHA Enterprise. You will need these from the [reCAPTCHA Enterprise Console](https://console.cloud.google.com/recaptcha). 
 
 If the key types shown below are not available and greyed out then please contact your Google Cloud Sales representitive:
+
 <img src="/res/disabled-drop-down.png?raw=true" width="200">
 
 Create a web, Android App, and iOS App site key and record the values here.
