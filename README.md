@@ -1,6 +1,6 @@
 # recaptcha-mobile-api-demo
 This demo will provision a Docker container to respond to requests from a mobile app. It runs as an API using the following spec:
-* [API Spec](api.md) 
+* [API Spec](/res/api.md) 
 
 The API runs an Apache Tomcat server and loads variables from the config.json file into the Java Environment for use in the application.
 
