@@ -28,7 +28,7 @@ These are the site keys from reCAPTCHA Enterprise. You will need these from the 
 
 If the key types shown below are not available and greyed out then please contact your Google Cloud Sales representitive:
 
-<img src="/res/disabled-drop-down.png?raw=true" width="200">
+<img src="/res/disabled-drop-down.png?raw=true" width="400">
 
 Create a web, Android App, and iOS App site key and record the values here.
 
@@ -66,7 +66,7 @@ The reCAPTCHA Enterprise call from the Docker container to Google Cloud needs to
 ### Services and APIs
 This is the API credentials needed by the Docker container to access the reCAPTCHA Enterprise sevice on Google Cloud. You must create a new credential in `APIs and Services`, and then limit the scope to reCAPTCHA Enterprise. Create this credential and use the API Key value as `api-access-key-for-recaptcha`.
 
-<img src="/res/api-credential-settings.png?raw=true" width="400">
+<img src="/res/api-credential-settings.png?raw=true" width="500">
 
 ```json
 "services-and-apis":{
@@ -82,7 +82,9 @@ From inside the directory with the `Dockerfile` file, start the container with c
 sudo docker build -t rcemobapi . && sudo docker run -p 8080:8080 rcemobapi:latest
 ```
 
-Navigate to http://localhost:8080 to verify the installation.
+Navigate to http://localhost:8080 to verify the installation. Send a `TEST EMPTY` (1) and `TEST TOKEN` (2) and verify the output looks like the below.
+
+<img src="/res/verify.png?raw=true" width="500">
 
 ## Clean Up
 
