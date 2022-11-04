@@ -7,6 +7,7 @@ This demo will provision a Docker container to respond to requests from a mobile
 
 ### API Keys
 The `api-keys` section is where the X-API-KEY header values that are used between the client and this docker container are stored.
+
 ```json
 "api-keys":{
         "description":"API keys for use by each platform accessing this API. Set custom-api-keys to false to automatically generate API keys.",
@@ -26,8 +27,29 @@ These are the site keys from reCAPTCHA Enterprise. You will need these from the 
 If the key types shown below are not available and greyed out then please contact your Google Cloud Sales representitive:
 <img src="/res/disabled-drop-down.png?raw=true" width="200">
 
+Create a web, Android App, and iOS App site key and record the values here.
+
+```json
+"site-keys": { 
+        "description":"reCAPTCHA Enterprise site keys",
+        "web":{
+            "description":"Website version 3 site key",
+            "value":""
+        },
+        "android":{
+            "description":"Android site key",
+            "value":""
+        },
+        "ios":{
+            "description":"iOS site key",
+            "value":""
+        }
+    }
+```
+
 ### Project Info
 The reCAPTCHA Enterprise call from the Docker container to Google Cloud needs to know details about your project, enter the project-number and project name.
+
 ```json
 "project-info":{
         "description":"Variables for the Project",
@@ -37,8 +59,15 @@ The reCAPTCHA Enterprise call from the Docker container to Google Cloud needs to
 ```
 
 ### Services and APIs
-This is the API credentials needed by the Docker container to access the reCAPTCHA Enterprise sevice on Google Cloud. You must create a new credential in `APIs and Services`, and then limit the scope to reCAPTCHA Enterprise.
+This is the API credentials needed by the Docker container to access the reCAPTCHA Enterprise sevice on Google Cloud. You must create a new credential in `APIs and Services`, and then limit the scope to reCAPTCHA Enterprise. Create this credential and use the API Key value as `api-access-key-for-recaptcha`.
 <img src="/res/api-credential-settings.png?raw=true" width="400">
+
+```json
+"services-and-apis":{
+        "description":"Credentials from the Services and APIs Console",
+        "api-access-key-for-recaptcha":""
+    }
+```
 
 ## Starting the container
 
