@@ -147,17 +147,30 @@ public class api extends HttpServlet {
                     instream.close();
                     
                     JSONObject jsonObject = new JSONObject(sb.toString()); 
-                    try{            
-                        Double score = jsonObject.getJSONObject("riskAnalysis").getDouble("score");
-                        String result = "failure, score was '"+score+"'";
-                        if(score>0.5){
-                            result = "success, score was '"+score+"'";
+                    try{
+                        Boolean isValid = jsonObject.getJSONObject("tokenProperties").getBoolean("valid");
+                        if(isValid){
+                            try{       
+                                Double score = jsonObject.getJSONObject("riskAnalysis").getDouble("score");
+                                String result = "failure, score was '"+score+"'";
+                                if(score>0.5){
+                                    result = "success, score was '"+score+"'";
+                                }
+                                reply.setResult(result);
+                            }   
+                            catch(Exception e){
+                                reply.setResult("Error with score: "+e+"\n\njsonObject="+jsonObject.toString());
+                            }
                         }
-                        reply.setResult(result);
-                    }   
+                        else{
+                            String invalidReason = jsonObject.getJSONObject("tokenProperties").getString("invalidReason");
+                            reply.setResult("Token not valid \""+invalidReason+"\"");
+                        }
+                    }
                     catch(Exception e){
-                        reply.setResult("Error with score: "+e+"\n\njsonObject="+jsonObject.toString());
-                    }                        
+                        reply.setResult("Could not discover token validity: "+e+"\n\njsonObject="+jsonObject.toString());
+                    }
+                                            
                 }
                 catch (Exception e){
                     reply.setResult("Error with interpretting API response from recaptcha: "+e);
@@ -267,7 +280,7 @@ public class api extends HttpServlet {
                                         // send Event object to recaptcha
                                         Reply recaptchaResponse = makeRecaptchaApiRequest(requestData);
                                         recaptchaResponse.setData(int_random+"");       
-                                        out.print(recaptchaResponse.asJSON());
+                                        out.println(recaptchaResponse.asJSON());
                                     }
                                     catch(Exception e){
                                         error(out,"Error creating Reply object");

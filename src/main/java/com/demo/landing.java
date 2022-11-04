@@ -29,7 +29,8 @@ public class landing extends HttpServlet {
         out.println("<script src=\"js/jquery.min.js\"></script>");
         out.println("<script src=\"js/app.js?nocache="+nocache+"\"></script>");
         out.println("</head>");
-        out.println("<body><input type='button' value='TEST EMPTY' onClick='javascript:sendJson(0);'><input type='button' value='TEST TOKEN' onClick='javascript:sendJson(1);'>");
+        out.println("<body><input type='button' value='TEST EMPTY' onClick='javascript:sendJson(0);'><input type='button' value='TEST TOKEN' onClick='javascript:sendJson(1);'><br>");
+        out.println("<textarea id=\"output\" cols=\"80\" rows=\"30\"></textarea>");
         out.println("<p><small>Last build time: <a href=\"https://github.com/bigdavros/recaptcha-mobile-api-demo\">"+System.getenv("LASTBUILD")+"</a></small></p>");
         out.println("</body>");
         out.println("</html>");

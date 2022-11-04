@@ -40,6 +40,7 @@ function doPost(request_json){
             processData: false,
             success: function(data, status, xhr) {
                 console.table(data);
+                document.getElementById("output").value=data+document.getElementById("output").value;
             },
             fail: function(jqxhr, settings, ex) { 
                 console.table('failed, ' + ex); 
