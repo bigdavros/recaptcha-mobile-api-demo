@@ -38,7 +38,7 @@ The reCAPTCHA Enterprise call from the Docker container to Google Cloud needs to
 
 ### Services and APIs
 This is the API credentials needed by the Docker container to access the reCAPTCHA Enterprise sevice on Google Cloud. You must create a new credential in `APIs and Services`, and then limit the scope to reCAPTCHA Enterprise.
-<img src="/res/api-credential-settings.png" width="400">
+<img src="/res/api-credential-settings.png?raw=true" width="400">
 
 Start container with command:
 ```
