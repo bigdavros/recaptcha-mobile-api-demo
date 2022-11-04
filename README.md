@@ -86,6 +86,12 @@ Navigate to http://localhost:8080 to verify the installation. Send a `TEST EMPTY
 
 <img src="/res/verify.png?raw=true" width="500">
 
+## Mobile Lab
+
+Use the accompanying Mobile lab to test integrating with the reCAPTCHA Enterprise Android SDK.
+
+* (https://github.com/bigdavros/recaptcha-mobile-app)
+
 ## Clean Up
 
 Once you have finished with the lab, remember to delete the site keys you made. This prevents the machine learning running reCAPTCHA Enterprise from giving you strange results after being run in a strange demo environment at the start of it's lifecycle.
