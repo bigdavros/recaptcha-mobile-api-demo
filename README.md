@@ -24,7 +24,7 @@ If you want the Docker container to create API keys for you, switch off `use-cus
 These are the site keys from reCAPTCHA Enterprise. You will need these from the [reCAPTCHA Enterprise Console](https://console.cloud.google.com/recaptcha). 
 
 If the key types shown below are not available and greyed out then please contact your Google Cloud Sales representitive:
-<img src="/res/disabled-drop-down.png" width="200">
+<img src="/res/disabled-drop-down.png?raw=true" width="200">
 
 ### Project Info
 The reCAPTCHA Enterprise call from the Docker container to Google Cloud needs to know details about your project, enter the project-number and project name.
@@ -40,7 +40,11 @@ The reCAPTCHA Enterprise call from the Docker container to Google Cloud needs to
 This is the API credentials needed by the Docker container to access the reCAPTCHA Enterprise sevice on Google Cloud. You must create a new credential in `APIs and Services`, and then limit the scope to reCAPTCHA Enterprise.
 <img src="/res/api-credential-settings.png?raw=true" width="400">
 
-Start container with command:
+## Starting the container
+
+From inside the directory with the `Dockerfile` file, start the container with command:
 ```
 sudo docker build -t rcemobapi . && sudo docker run -p 8080:8080 rcemobapi:latest
 ```
+
+Navigate to http://localhost:8080 to verify the installation.
