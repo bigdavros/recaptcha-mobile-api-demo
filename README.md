@@ -21,7 +21,9 @@ The `api-keys` section is where the X-API-KEY header values that are used betwee
         }        
     }
 ```
-If you want the Docker container to create API keys for you, switch off `use-custom-api-keys` by setting it to false. The container will then create new API Keys for use. Otherwise set the values of web, android, and iOS to the X-API-KEY value you want to send from your application to the container.
+If you want the Docker container to create API keys for you, switch off `use-custom-api-keys` by setting it to false. The container will then create new API Keys for use. Otherwise set the values of web, android, and iOS to the X-API-KEY value you want to send from your application to the container. If you have the container make API keys for you, look out for the output when the container loads:
+
+<img src="/res/api-keys.png?raw=true" width="500">
 
 ### Site Keys
 These are the site keys from reCAPTCHA Enterprise. You will need these from the [reCAPTCHA Enterprise Console](https://console.cloud.google.com/recaptcha). 
