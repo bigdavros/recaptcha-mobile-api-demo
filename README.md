@@ -72,7 +72,7 @@ This is the API credentials needed by the Docker container to access the reCAPTC
 ## Starting the container
 
 From inside the directory with the `Dockerfile` file, start the container with command:
-```
+```shell
 sudo docker build -t rcemobapi . && sudo docker run -p 8080:8080 rcemobapi:latest
 ```
 
