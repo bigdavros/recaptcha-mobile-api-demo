@@ -1,0 +1,35 @@
+{
+    "api-keys":{
+        "description":"X-API-Key values. API keys for use by each platform accessing _this_ API. Set custom-api-keys to false to automatically generate API keys. This API key is set as a HTTP header called 'X-API-Key' in the Mobile App making the request.",
+        "use-custom-api-keys":true,
+        "custom-api-keys":{
+            "web":"TEST",
+            "android":"TEST",
+            "ios":"TEST"
+        }        
+    },
+    "site-keys": { 
+        "description":"reCAPTCHA Enterprise site keys",
+        "web":{
+            "description":"Website version 3 site key",
+            "value":""
+        },
+        "android":{
+            "description":"Android site key",
+            "value":""
+        },
+        "ios":{
+            "description":"iOS site key",
+            "value":""
+        }
+    },
+    "project-info":{
+        "description":"Variables for the Project",
+        "project-number":"",
+        "project-id":""
+    },
+    "services-and-apis":{
+        "description":"Credentials from the Services and APIs Console",
+        "api-access-key-for-recaptcha":""
+    }
+}
